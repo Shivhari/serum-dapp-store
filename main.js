@@ -3,7 +3,7 @@ const allCourseTags = data ? [...data.reduce((acc, course) => (acc = [...acc, ..
 const uniqueCourseTags = Array.from(new Set(allCourseTags));
 
 // Course per page
-const perPage = 9;
+const perPage = 20;
 
 // determine if we're filtering by tag
 const courseTagFilterVal = getParameterByName('courseTag');
