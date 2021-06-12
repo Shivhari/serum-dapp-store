@@ -31,10 +31,33 @@
 				<!-- speace for tags -->
 			</h5>
 		</div>
-
 		<!-- <img src="./assets/images/backdrop.png" alt="Hacktoberfest Logo" class="hero__image" /> -->
 	</section>
-
+	<section class="search__wrapper">
+		<div class="wrap">
+			<div class="search">
+				<input id="searchbar" type="text" class="searchTerm" placeholder="Search" onkeyup="search_list()">
+				<button type="submit" class="searchButton">
+					<i class="fa fa-search"></i>
+				</button>
+				<div class="tag__wrapper">
+					<div class="course__tags" id="searchTagsList">
+						Search by Tags:
+						<!-- <a href="?courseTag=web"><div class="course__tag">web</div></a>
+						<a href="?courseTag=token"><div class="course__tag">token</div></a>
+						<a href="?courseTag=bots"><div class="course__tag">bots</div></a>
+						<a href="?courseTag=voting"><div class="course__tag">voting</div></a>
+						<a href="?courseTag=advanced"><div class="course__tag">advanced</div></a> -->
+					</div>
+				</div>
+			</div>
+			<div class="search" id="clearMessage">
+				
+					<!-- Filtering by: <span class="filter__message--tagname">token</span> —
+					<a class="filter__clear" href="index.html">✗ Clear</a> -->
+			</div>
+		</div>
+	</section>
 	<!-- Courses Section-->
 
 	<section class="courses__wrapper">

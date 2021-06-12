@@ -19,7 +19,7 @@ body {
   width: 100vw;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 2em;
+  padding: 2em 2em 0em 2em;
   background: #ffffff;
 }
 .main__navbar .navbar__logo {
@@ -63,12 +63,12 @@ body {
 }
 .hero__wrapper .hero__title {
   padding-left: 2em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   width: 75%;
 }
 .hero__wrapper .hero__title h3 {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 600;
 }
 .hero__wrapper .hero__title h5 {
@@ -174,7 +174,7 @@ body {
   width: max-content;
   border-radius: 1px;
   font-size: 0.75rem;
-  background: #9c4668;
+  background: #00B4CC;
   padding: 0.1rem 0.4rem;
   color: white;
 }
@@ -197,18 +197,18 @@ body {
 }
 .courses__wrapper .courses__list .courses__card .course__call_to_action {
   margin-top: 1rem;
-  border: 1px solid #9c4668;
+  border: 1px solid #00B4CC;
   display: flex;
   justify-content: center;
   text-decoration: none;
-  color: #9c4668;
+  color: #00B4CC;
   padding: 0.5rem 0;
   text-align: center;
   width: 100%;
   transition: all ease-in-out 250ms;
 }
 .courses__wrapper .courses__list .courses__card .course__call_to_action:hover {
-  background: #9c4668;
+  background: #00B4CC;
   color: white;
 }
 .courses__wrapper .pagination {
@@ -225,7 +225,7 @@ body {
   transition: 0.2s;
 }
 .courses__wrapper .pagination a.active {
-  background-color: #9c4668;
+  background-color: #00B4CC;
   color: white;
 }
 .courses__wrapper .pagination a:hover:not(.active) {
@@ -240,6 +240,73 @@ body {
 }
 .filter__message--tagname {
   text-decoration: underline;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-left: 2em;
+  padding-bottom: 1em;
+}
+
+.search__wrapper {
+  display: flex;
+  background: #ffffff;
+  max-height: 300px;
+  padding: 0em 5em;
+}
+
+.searchTerm {
+  width: 300px;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.tag__wrapper {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0rem 1rem;
+  background: white;
+  position: relative;
+}
+.tag__wrapper .course__tags {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  margin-bottom: 0.5rem;
+}
+.tag__wrapper .course__tags a {
+  text-decoration: none;
+}
+.tag__wrapper .course__tag {
+  flex: 0;
+  margin: 0.3rem;
+  width: max-content;
+  border-radius: 1px;
+  font-size: 0.75rem;
+  background: #00B4CC;
+  padding: 0.1rem 0.4rem;
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

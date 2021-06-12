@@ -1,7 +1,7 @@
 let data = [
   {
     name:'Bonfida Serum DEX',
-    url:'https://www.youtube.com/channel/UCRQhZGXC0WK85YRXl7nGX0w',
+    url:'https://dex.bonfida.com/',
     description:'Bonfida DEX will give traders the best functionality and experience maintaining its place as the most used Serum DEX, including a builtin wallet, starter SOL airdrops, and more.',
     image: 'bonfida.png',
     tags:['web', 'token','bots','voting','advanced']
@@ -47,7 +47,7 @@ let data = [
     url: "https://dex.projectserum.com/",
     description: "Project Serum's DEX",
     image: "serumtoday.png",
-    tags: ["web-development", "Edureka"],
+    tags: ["web"],
   },
   {
     name: "Santosha Exchange",
@@ -63,6 +63,6 @@ let data = [
     description:
       "UI Clone of Project Serum Dex",
     image: "serumtoday.png",
-    tags: ["linux", "bash"],
+    tags: ["web"],
   },
 ];

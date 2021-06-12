@@ -1,3 +1,4 @@
+const orgData=data;
 const allCourseTags = data ? [...data.reduce((acc, course) => (acc = [...acc, ...course.tags]), [])] : [];
 const uniqueCourseTags = Array.from(new Set(allCourseTags));
 
@@ -7,21 +8,12 @@ const perPage = 9;
 // determine if we're filtering by tag
 const courseTagFilterVal = getParameterByName('courseTag');
 const isValidTag = uniqueCourseTags.includes(courseTagFilterVal);
+console.log(isValidTag);
 const coursesFilteredByTag = isValidTag ?
 	data.filter(
 		(course) => course.tags && course.tags.includes(courseTagFilterVal)
 	) :
 	data;
-
-// If we have a valid tag, display a message to clear it
-if (isValidTag) {
-
-	const message = `<h3 class="filter__message">
-	Filtering by tag <span class="filter__message--tagname">${courseTagFilterVal}</span> &mdash;
-	<a class="filter__clear" href="index.html">&cross; Clear</a></h3>`;
-
-	$(".courses__list").append(message);
-}
 
 // Get current page number from URL
 let currentPage = getParameterByName('page');
@@ -30,7 +22,26 @@ currentPage = currentPage ? currentPage : 1;
 // Display filtered courses with pagination
 display(currentPage, coursesFilteredByTag);
 pagination(currentPage, coursesFilteredByTag);
+display_searchTags(uniqueCourseTags);
+display_clearFilter();
 
+function display_clearFilter(){
+	// If we have a valid tag, display a message to clear it
+if (isValidTag) {
+
+	const message = `
+	Filtering by: <span class="filter__message--tagname">${courseTagFilterVal}</span> &mdash;
+	<a class="filter__clear" href="index.html">&cross; Clear</a>`;
+	console.log(message);
+	$("#clearMessage").append(message);
+}
+}
+function display_searchTags(tags=[]){
+	let tagHtml=tags
+		.map((tag) => `<a href="?courseTag=${tag}"><div class="course__tag">${tag}</div></a>`)
+		.join("");
+	$("#searchTagsList").append(tagHtml);
+}
 /**
  * Display Provided course for particular page
  * 
@@ -38,7 +49,7 @@ pagination(currentPage, coursesFilteredByTag);
  * @param Array data 
  */
 function display(page = 1, data = []) {
-
+	$(".courses__list").html('');
 	let limit = data.length;
 	const totalPages = Math.ceil(limit / perPage);
 
@@ -70,7 +81,7 @@ function display(page = 1, data = []) {
 						`<div class="course__description">
 							${course.description.substring(0, 100)}..
 						</div>
-						<a target="_blank" class="course__call_to_action" href="${course.url}"> Learn More </a>
+						<a target="_blank" class="course__call_to_action" href="${course.url}"> Go To Site </a>
 					</div>
 				</div>`;
 
@@ -115,3 +126,19 @@ $('.pagination .pagination__link').on('click', function (e) {
 	urlParams.set('page', page);
 	window.location.search = urlParams;
 });
+
+function search_list(){
+	let input = document.getElementById('searchbar').value
+	if(input.trim().length==0){
+		display(currentPage, orgData);
+		pagination(currentPage, orgData);			
+		return;
+	}
+    input=input.toLowerCase();
+	console.log(input);
+	let searchData=orgData.filter(
+		(course) => course.name.toLocaleLowerCase().search(input)>-1
+	)
+	display(currentPage, searchData);
+	pagination(currentPage, searchData);
+}
